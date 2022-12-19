@@ -1,0 +1,110 @@
+<header>
+  <!------------------------------------------------------------------------------>
+  <!----------------------------------Header-------------------------------------->
+  <!------------------------------------------------------------------------------>
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+      >
+        <a
+        [routerLink]="['/home/shop']"
+          class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+        >
+          <img
+            src="../../assets/images/favicon.png"
+            style="width: 50px; height: 50px"
+          />
+        </a>
+        <a class="navbar-brand" style="font-size: large" [routerLink]="['/home/shop']">{{
+          title
+        }}</a>
+        &nbsp;&nbsp;&nbsp;
+        <ul
+          class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+        >
+          <li><a [routerLink]="['/home/shop']" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a [routerLink]="['/home/cart']" class="nav-link px-2 text-white">Panier</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input
+            type="search"
+            class="form-control form-control-dark text-bg-dark"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2" >
+            <button mat-button routerLink="/login" *ngIf="!authService.isClient()">
+              <mat-icon>power_settings_new</mat-icon>
+              Login
+            </button>
+            <button mat-button routerLink="/logout" *ngIf="authService.isClient()">
+              <mat-icon>power_settings_new</mat-icon>
+              Logout
+            </button>
+          </button>
+          
+
+          <button type="button" class="btn btn-warning me-2" *ngIf="!authService.isClient()">
+            <button mat-button routerLink="/signup">
+              <mat-icon>exit_to_app</mat-icon>
+              Sign-up
+            </button>
+          </button>
+
+          <button mat-button fxHide="false" [routerLink]="['/home/cart']"> <mat-icon>shopping_cart</mat-icon>
+          </button>
+          
+          <!--<button
+            mat-button
+            [mat-menu-trigger-for]="menu"
+            fxHide="false"
+          >-->
+          <button
+          *ngIf="authService.isClient()"
+            mat-button
+            
+            fxHide="false"
+          >
+          <mat-icon>person</mat-icon>
+          <span> &nbsp; {{authService.loggedUser}}</span>
+        </button>
+          <!--fxHide.gt-sm-->
+            <!--<mat-icon>shopping_cart</mat-icon>
+          </button>-->
+
+          <!--<mat-menu x-position="before" #menu="matMenu">
+            <button mat-menu-item routerLink="/">
+              <mat-icon>home</mat-icon>
+              Home
+            </button>
+            <button mat-menu-item routerLink="/game">
+              <mat-icon>gamepad</mat-icon>
+              Play
+            </button>
+            <button mat-menu-item routerLink="/login">
+              <mat-icon>power_settings_new</mat-icon>
+              Login
+            </button>
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>-->
+
+          <!--<button type="button" class="btn btn-warning">Sign-up</button>-->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <!--------------------------------------------------------------------------------->
+
+ 
+</header>

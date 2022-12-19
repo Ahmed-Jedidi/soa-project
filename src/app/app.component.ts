@@ -22,5 +22,5 @@ import {
   ]
 })
 export class AppComponent {
-  title = 'soa-project';
+  //title = 'soa-project';
 }

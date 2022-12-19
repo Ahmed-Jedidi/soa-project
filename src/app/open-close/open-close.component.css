@@ -11,3 +11,14 @@
     font-weight: bold;
     font-size: 20px;
   }
+
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .filler {
+    flex: 1 1 auto;
+ }
+ .gap {
+    margin-right: 10px;
+ }

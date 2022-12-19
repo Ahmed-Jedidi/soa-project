@@ -1,0 +1,60 @@
+
+
+<div class="main-content">
+    <!--Header component-->
+    <app-header></app-header>
+    <main>
+      <!-- Router outlet -->
+      <router-outlet></router-outlet>
+      <br><br><br><br>
+      <!--<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="box">
+          <mat-card-header>
+            <mat-card-title>Log in</mat-card-title>
+          </mat-card-header>
+          <form class="example-form">
+            <mat-card-content>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Username" [(ngModel)]="client.email" name="email">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password" [(ngModel)]="client.password" name="password">
+              </mat-form-field>
+            </mat-card-content>
+            <button mat-stroked-button color="accent" class="btn-block" (click)="onLoggedin()">Log in</button>
+          </form>
+        </mat-card>
+      </div>-->
+      
+<mat-card class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card-content>
+    <form #loginForm="ngForm" (ngSubmit)="onLoggedin()">
+      <mat-card-header>
+        <mat-card-title>Log In</mat-card-title>
+      </mat-card-header>
+      <mat-error *ngIf="!loginValid">
+        The username and password were not recognized
+      </mat-error>
+      <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="client.email" name="email" required>
+        <mat-error>
+          Please provide a valid email address
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" [(ngModel)]="client.password" name="password" required>
+        <mat-error>
+          Please provide a valid password
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid" class="btn-block">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+    </main>
+</div>
+
+
+
+
+

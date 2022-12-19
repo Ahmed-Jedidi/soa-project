@@ -47,6 +47,9 @@ export class OpenCloseComponent /*implements OnInit*/ {
     this.isOpen = !this.isOpen;
   }
 
+
+  title = 'soa-project';
+
   
 
 }
